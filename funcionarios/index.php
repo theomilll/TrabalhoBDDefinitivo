@@ -37,7 +37,6 @@ $result = $conn->query($sql);
         <input type="text" name="cargo" placeholder="Cargo"><br>
         <input type="text" name="departamento" placeholder="Departamento"><br>
         <input type="text" name="contato" placeholder="Contato"><br>
-        <!-- <input type="text" name="supervisor" placeholder="Supervisor"><br> -->
         <input type="text" name="setor" placeholder="Setor"><br>
         <textarea name="atividades_atribuidas" placeholder="Atividades Atribuídas"></textarea><br>
         <input type="submit" value="Adicionar Funcionário">
@@ -45,10 +44,15 @@ $result = $conn->query($sql);
 
     <h3>Lista de Funcionários</h3>
     <ul>
+    <ul>
+        <li><a href="pesquisar.php">Pesquisar Funcionário</a></li>
+        <li><a href="consulta.php">Atividades Atribuídas mais comuns</a></li>
+    </ul>
     <?php
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
             echo "<li>" . $row["Nome"] . " - Cargo: " . $row["Cargo"] . " - Departamento: " . $row["Departamento"];
+            echo " - Atividades Atribuídas: " . $row["Atividades_Atribuidas"];
             echo " - <a href='editar.php?id=" . $row["Id_Funcionario"] . "'>Editar</a>";
             echo " - <a href='deletar.php?id=" . $row["Id_Funcionario"] . "'>Deletar</a></li>";
         }

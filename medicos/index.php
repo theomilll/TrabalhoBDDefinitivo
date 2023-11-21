@@ -61,6 +61,7 @@ $result = $conn->query($sql);
     <h3>Gerenciar Médicos</h3>
     <ul>
         <li><a href="pesquisar.php">Pesquisar Médico</a></li>
+        <li><a href="consulta.php">Cargos de Médicos Mais Comuns</a></li>
     </ul>
 
     <a href="../">Voltar para a página inicial</a>
